@@ -1,23 +1,12 @@
 <!-- Php & mysql database tutorials
 https://www.tutorialrepublic.com/php-tutorial/php-mysql-create-table.php -->
-
-<!-- 
-    Short html, php + sql program which inserts user inputs into sql database through php using html front and displays database contents in the page 
-    1. Establish sql database connection using php
-    2. Create new table if none is found
-    3. Check if user has made any inputs through form in previous page. If inputs found, insert inputs into database. If not, pass
-    4. Load table contents from database and display them into html webpage
-    5. After the page refresh (form submitted, F5 pressed, new user arrives to page) continue from 1. 
--->
 <!DOCTYPE html>
 <html lang="en">
 <?php
-//include 'db_connection.php';
 
 // Initial connection
 // --------------------------------------------------
 
-//$link = OpenCon("localhost", "root", "", "shoppinglist_dsb");
 $link = mysqli_connect("localhost", "root", "", "shoppinglist_db");
 
 if ($link === false) {
@@ -64,7 +53,6 @@ if (isset($_POST['item'])) {
     }
 }
 
-//CloseCon($link);
 mysqli_close($link);
 
 $message = "";
@@ -127,10 +115,7 @@ function show_shoppinglist_items_list($link)
         echo "</div>";
     }
 }
-
 ?>
-
-
 
 <head>
     <meta charset="UTF-8">
